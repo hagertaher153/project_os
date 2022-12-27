@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: haiam
+
+spec: 
+  selector:
+    matchLabels:
+      app: Mohammed
+
+  replicas: 3
+  template: 
+    metadata: 
+      name: my-frist-pod
+      labels: 
+        app: Mohammed
+    spec: 
+      containers:
+        - image: norhanyounis/webimage
+          name: nginx-container
+          resources:
+            limits:
+              memory: "512Mi"  
+              cpu: "1" 
